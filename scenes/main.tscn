@@ -6,11 +6,14 @@
 
 [node name="main" type="Node2D" unique_id=409962114]
 
+[node name="darkness" type="CanvasModulate" parent="." unique_id=1368967051]
+color = Color(0.33333334, 0.3372549, 0.41960785, 1)
+
 [node name="village" parent="." unique_id=1095889006 instance=ExtResource("3_sugp2")]
 
 [node name="levelroot" type="Node2D" parent="." unique_id=1384361751]
 
 [node name="player_1" parent="." unique_id=1510251072 instance=ExtResource("1_o5qli")]
-position = Vector2(1111, 896)
+position = Vector2(2610, 729)
 
 [node name="hud" parent="." unique_id=145442079 instance=ExtResource("2_0wfyh")]

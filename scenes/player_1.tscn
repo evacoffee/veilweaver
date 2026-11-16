@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wboer1bcoy1b" path="res://scripts/player_1.gd" id="1_vod78"]
 [ext_resource type="Texture2D" uid="uid://d1u6t6702vovy" path="res://assets/images/player/AnimationSheet_Character.png" id="2_gneq0"]
+[ext_resource type="Texture2D" uid="uid://5cdw7spomn0v" path="res://assets/images/player/purple.png" id="3_f7tsm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f7tsm"]
 atlas = ExtResource("2_gneq0")
@@ -183,3 +184,9 @@ limit_left = 0
 limit_top = 0
 limit_right = 3712
 limit_bottom = 2112
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=788754943]
+scale = Vector2(0.2, 0.2)
+color = Color(0.7254902, 0.64705884, 1, 1)
+energy = 0.65
+texture = ExtResource("3_f7tsm")

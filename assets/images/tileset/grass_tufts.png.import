@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jarsvcsvm0cy"
-path="res://.godot/imported/Hills.png-3a21a21288ac05795be62961feaa4f6c.ctex"
+uid="uid://dklctfc7psjrw"
+path="res://.godot/imported/grass_tufts.png-3ca0070e5a6babfd6347ec3d2fae1620.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/tileset/Hills.png"
-dest_files=["res://.godot/imported/Hills.png-3a21a21288ac05795be62961feaa4f6c.ctex"]
+source_file="res://assets/images/tileset/grass_tufts.png"
+dest_files=["res://.godot/imported/grass_tufts.png-3ca0070e5a6babfd6347ec3d2fae1620.ctex"]
 
 [params]
 
