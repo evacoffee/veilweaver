@@ -1,5 +1,5 @@
 # veilweaver
-veilweaver is a godot 2d RPG where players explore a magical village, attend an academy, discover a forest, battle creatures, collect ingredients, and craft their own unique spells
+veilweaver is a godot 2d RPG where players explore a magical village, discover a forest, battle creatures, collect ingredients (and sell them!), and craft their own unique spells
 
 play here!!: 
 
