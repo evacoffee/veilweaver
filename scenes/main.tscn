@@ -11,6 +11,6 @@
 [node name="levelroot" type="Node2D" parent="." unique_id=1384361751]
 
 [node name="player_1" parent="." unique_id=1510251072 instance=ExtResource("1_o5qli")]
-position = Vector2(1139, 710)
+position = Vector2(1111, 896)
 
 [node name="hud" parent="." unique_id=145442079 instance=ExtResource("2_0wfyh")]
