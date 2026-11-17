@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjyw185gxtmbf" path="res://assets/images/cat/Cat_Run_Back_strip16.png" id="5_kedyd"]
 [ext_resource type="Texture2D" uid="uid://0fyc6563gexd" path="res://assets/images/cat/Cat_Run_Front_strip16.png" id="6_v4p53"]
 [ext_resource type="Texture2D" uid="uid://csfwr11j06361" path="res://assets/images/cat/Cat_Run_Side_strip16.png" id="7_32af4"]
+[ext_resource type="Texture2D" uid="uid://5cdw7spomn0v" path="res://assets/images/player/purple.png" id="9_8px16"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_se5fe"]
 atlas = ExtResource("1_myi5k")
@@ -925,6 +926,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1iy0d"]
 size = Vector2(28, 20)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ic5u8"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 70.0
+initial_velocity_max = 70.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
+
 [node name="cat" type="CharacterBody2D" unique_id=2131195441]
 scale = Vector2(2, 2)
 script = ExtResource("1_ic5u8")
@@ -936,3 +947,11 @@ animation = &"run_side"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004191206]
 position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_1iy0d")
+
+[node name="poof" type="GPUParticles2D" parent="." unique_id=1550801590]
+emitting = false
+amount = 30
+texture = ExtResource("9_8px16")
+lifetime = 0.6
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ic5u8")
