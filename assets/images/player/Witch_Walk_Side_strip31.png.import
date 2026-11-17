@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1u6t6702vovy"
-path="res://.godot/imported/AnimationSheet_Character.png-433303289f3f624d707afbed998a94cd.ctex"
+uid="uid://cc8x81ljv2kgk"
+path="res://.godot/imported/Witch_Walk_Side_strip31.png-e05a385f02e3253cff5e848cde40be16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/player/AnimationSheet_Character.png"
-dest_files=["res://.godot/imported/AnimationSheet_Character.png-433303289f3f624d707afbed998a94cd.ctex"]
+source_file="res://assets/images/player/Witch_Walk_Side_strip31.png"
+dest_files=["res://.godot/imported/Witch_Walk_Side_strip31.png-e05a385f02e3253cff5e848cde40be16.ctex"]
 
 [params]
 

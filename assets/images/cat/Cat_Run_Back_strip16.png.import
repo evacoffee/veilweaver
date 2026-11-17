@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clpm283ejrwf2"
-path="res://.godot/imported/librarian_walk_idle_sheet.png-70b78bc30b625aacfc51b9670a10175b.ctex"
+uid="uid://bjyw185gxtmbf"
+path="res://.godot/imported/Cat_Run_Back_strip16.png-2f5897f2f8ddb520a15dc25bfe5b3eaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/npcs/librarian_walk_idle_sheet.png"
-dest_files=["res://.godot/imported/librarian_walk_idle_sheet.png-70b78bc30b625aacfc51b9670a10175b.ctex"]
+source_file="res://assets/images/cat/Cat_Run_Back_strip16.png"
+dest_files=["res://.godot/imported/Cat_Run_Back_strip16.png-2f5897f2f8ddb520a15dc25bfe5b3eaa.ctex"]
 
 [params]
 

@@ -12,6 +12,8 @@ var dash_timer = 0.0
 var dash_cooldown = 0.0
 var dash_direction = Vector2.ZERO
 
+var facing = "_front"
+
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
@@ -39,16 +41,24 @@ func _physics_process(delta):
 	update_animation(direction)
 
 func update_animation(direction):
-	if is_dashing:
-		sprite.play("dash")
-		
-	elif direction != Vector2.ZERO:
-		sprite.play("run")
-		
-	else:
-		sprite.play("idle")
-		
 	if direction.x < 0:
+		facing = "_side"
 		sprite.flip_h = true
 	elif direction.x > 0:
+		facing = "_side"
 		sprite.flip_h = false
+	elif direction.y < 0:
+		facing = "_back"
+	elif direction.y > 0:
+		facing = "_front"
+		
+	var animation_name = ""
+	
+	if is_dashing:
+		animation_name = "dash"
+	elif direction != Vector2.ZERO:
+		animation_name = "run"
+	else:
+		animation_name = "idle"
+		
+	sprite.play(animation_name + facing)
