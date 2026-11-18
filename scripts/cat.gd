@@ -25,6 +25,9 @@ var teleport_timer = 0.0
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	
+	if player:
+		add_collision_exception_with(player)
+		
 	poof.emitting = false
 	poof.local_coords = false
 
@@ -67,7 +70,10 @@ func _physics_process(delta):
 	var target_position = player.global_position + follow_offset
 	var distance = global_position.distance_to(target_position)
 	
-	if global_position.distance_to(player.global_position) > TELEPORT_DISTANCE:
+	var viewport_rect = get_viewport().get_visible_rect()
+	var cat_screen_position = get_viewport().get_canvas_transform() * global_position
+	
+	if not viewport_rect.has_point(cat_screen_position):
 		if try_teleport():
 			return
 			

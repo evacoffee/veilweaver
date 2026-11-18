@@ -14,6 +14,12 @@ var dash_direction = Vector2.ZERO
 
 var facing = "_front"
 
+func _ready() -> void:
+	var cat = get_tree().get_first_node_in_group("cat")
+	
+	if cat:
+		add_collision_exception_with(cat)
+		
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	

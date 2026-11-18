@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bjrh6n55un7bq"]
 
-[ext_resource type="Script" uid="uid://cvgxvoguemnnn" path="res://scenes/cat.gd" id="1_ic5u8"]
+[ext_resource type="Script" uid="uid://cvgxvoguemnnn" path="res://scripts/cat.gd" id="1_ic5u8"]
 [ext_resource type="Texture2D" uid="uid://25jp2wu3cp5f" path="res://assets/images/cat/Cat_Idle_Back_strip29.png" id="1_myi5k"]
 [ext_resource type="Texture2D" uid="uid://cbe5h07uyei8l" path="res://assets/images/cat/Cat_Idle_Front_strip31.png" id="2_o55mh"]
 [ext_resource type="Texture2D" uid="uid://djhjaubviqqtn" path="res://assets/images/cat/Cat_Idle_Side_strip31.png" id="3_ic5u8"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjyw185gxtmbf" path="res://assets/images/cat/Cat_Run_Back_strip16.png" id="5_kedyd"]
 [ext_resource type="Texture2D" uid="uid://0fyc6563gexd" path="res://assets/images/cat/Cat_Run_Front_strip16.png" id="6_v4p53"]
 [ext_resource type="Texture2D" uid="uid://csfwr11j06361" path="res://assets/images/cat/Cat_Run_Side_strip16.png" id="7_32af4"]
-[ext_resource type="Texture2D" uid="uid://5cdw7spomn0v" path="res://assets/images/player/purple.png" id="9_8px16"]
+[ext_resource type="Texture2D" uid="uid://crf0wjvs1cttc" path="res://assets/images/cat/poof.png" id="9_8px16"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_se5fe"]
 atlas = ExtResource("1_myi5k")
@@ -930,11 +930,11 @@ size = Vector2(28, 20)
 particle_flag_disable_z = true
 direction = Vector3(0, -1, 0)
 spread = 180.0
-initial_velocity_min = 70.0
-initial_velocity_max = 70.0
+initial_velocity_min = 45.0
+initial_velocity_max = 45.0
 gravity = Vector3(0, 0, 0)
-scale_min = 2.0
-scale_max = 2.0
+scale_min = 0.14999999
+scale_max = 0.39999998
 
 [node name="cat" type="CharacterBody2D" unique_id=2131195441]
 scale = Vector2(2, 2)
@@ -950,8 +950,9 @@ shape = SubResource("RectangleShape2D_1iy0d")
 
 [node name="poof" type="GPUParticles2D" parent="." unique_id=1550801590]
 emitting = false
-amount = 30
+amount = 20
 texture = ExtResource("9_8px16")
-lifetime = 0.6
+lifetime = 0.4
+one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ic5u8")
