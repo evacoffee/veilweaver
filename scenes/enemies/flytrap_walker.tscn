@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://b37pq2uh8msxh"]
+
+[ext_resource type="Texture2D" uid="uid://dngm1nkjmm7gq" path="res://assets/images/enemies/flytrap_walker_16x32_sheet.png" id="1_ckk6b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckk6b"]
+atlas = ExtResource("1_ckk6b")
+region = Rect2(0, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aakl"]
+atlas = ExtResource("1_ckk6b")
+region = Rect2(16, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0p0o"]
+atlas = ExtResource("1_ckk6b")
+region = Rect2(32, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tevo"]
+atlas = ExtResource("1_ckk6b")
+region = Rect2(48, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akiv1"]
+atlas = ExtResource("1_ckk6b")
+region = Rect2(64, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2lp7"]
+atlas = ExtResource("1_ckk6b")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c20p"]
+atlas = ExtResource("1_ckk6b")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kycss"]
+atlas = ExtResource("1_ckk6b")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3i3m"]
+atlas = ExtResource("1_ckk6b")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1iy0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckk6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aakl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0p0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tevo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akiv1")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2lp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c20p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kycss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3i3m")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3qjg"]
+size = Vector2(15, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8aakl"]
+radius = 66.53007
+
+[node name="flytrap_walker" type="CharacterBody2D" unique_id=1204588996]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=872220850]
+sprite_frames = SubResource("SpriteFrames_1iy0d")
+animation = &"attack"
+autoplay = "idle"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1134244003]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_f3qjg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=775548686]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1580323845]
+shape = SubResource("CircleShape2D_8aakl")

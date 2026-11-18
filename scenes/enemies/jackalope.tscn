@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://np3qfjee1bk4"]
+
+[ext_resource type="Texture2D" uid="uid://d0gerjhxf670l" path="res://assets/images/enemies/jackalope_16x16_sheet.png" id="1_v6qun"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss801"]
+atlas = ExtResource("1_v6qun")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lba2e"]
+atlas = ExtResource("1_v6qun")
+region = Rect2(16, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbn2t"]
+atlas = ExtResource("1_v6qun")
+region = Rect2(32, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyio0"]
+atlas = ExtResource("1_v6qun")
+region = Rect2(48, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pi5r"]
+atlas = ExtResource("1_v6qun")
+region = Rect2(64, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1to7"]
+atlas = ExtResource("1_v6qun")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bakt8"]
+atlas = ExtResource("1_v6qun")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78x21"]
+atlas = ExtResource("1_v6qun")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1ppx"]
+atlas = ExtResource("1_v6qun")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1iy0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss801")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lba2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbn2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyio0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pi5r")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1to7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bakt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78x21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1ppx")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckk6b"]
+size = Vector2(12, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mplcb"]
+radius = 35.5
+
+[node name="jackalope" type="CharacterBody2D" unique_id=1947362326]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1740940823]
+sprite_frames = SubResource("SpriteFrames_1iy0d")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=994649351]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ckk6b")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2038085872]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1616229917]
+shape = SubResource("CircleShape2D_mplcb")

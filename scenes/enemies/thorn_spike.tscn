@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://dtjt5lrgxtdyi"]
+
+[ext_resource type="Texture2D" uid="uid://b0rxsxn0oer3x" path="res://assets/images/enemies/thorn_sprite_16x16_sheet.png" id="1_ien7u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w2bs"]
+atlas = ExtResource("1_ien7u")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0bgt"]
+atlas = ExtResource("1_ien7u")
+region = Rect2(16, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vshe"]
+atlas = ExtResource("1_ien7u")
+region = Rect2(32, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g6gf"]
+atlas = ExtResource("1_ien7u")
+region = Rect2(48, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kothq"]
+atlas = ExtResource("1_ien7u")
+region = Rect2(64, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l88s3"]
+atlas = ExtResource("1_ien7u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f22y4"]
+atlas = ExtResource("1_ien7u")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n40e2"]
+atlas = ExtResource("1_ien7u")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4xk5"]
+atlas = ExtResource("1_ien7u")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1iy0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w2bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0bgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vshe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g6gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kothq")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l88s3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f22y4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n40e2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4xk5")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brk2j"]
+size = Vector2(18, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ien7u"]
+radius = 47.00266
+
+[node name="thorn_spike" type="CharacterBody2D" unique_id=1174460056]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1044523081]
+sprite_frames = SubResource("SpriteFrames_1iy0d")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2103785730]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_brk2j")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1510859677]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=934493692]
+shape = SubResource("CircleShape2D_ien7u")

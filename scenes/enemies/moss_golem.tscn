@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cqy755qxovo7c"]
+
+[ext_resource type="Texture2D" uid="uid://0nctbnq40uul" path="res://assets/images/enemies/moss_golem_32x32_sheet.png" id="1_7pycv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nmit"]
+atlas = ExtResource("1_7pycv")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73bgy"]
+atlas = ExtResource("1_7pycv")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w50b"]
+atlas = ExtResource("1_7pycv")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyiny"]
+atlas = ExtResource("1_7pycv")
+region = Rect2(96, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifx6k"]
+atlas = ExtResource("1_7pycv")
+region = Rect2(128, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7ikg"]
+atlas = ExtResource("1_7pycv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35nbq"]
+atlas = ExtResource("1_7pycv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl11x"]
+atlas = ExtResource("1_7pycv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdrm4"]
+atlas = ExtResource("1_7pycv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h0f3k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nmit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73bgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w50b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyiny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifx6k")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7ikg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35nbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl11x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdrm4")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c36m"]
+size = Vector2(32, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7pycv"]
+radius = 65.00769
+
+[node name="moss_golem" type="CharacterBody2D" unique_id=941946311]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=889988612]
+sprite_frames = SubResource("SpriteFrames_h0f3k")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1233820232]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_0c36m")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1722623083]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=992043928]
+shape = SubResource("CircleShape2D_7pycv")

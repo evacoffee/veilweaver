@@ -2074,7 +2074,7 @@ size = Vector2(22.500006, 22.800003)
 
 [node name="player_1" type="CharacterBody2D" unique_id=1510251072 groups=["player"]]
 scale = Vector2(2, 2)
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_vod78")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=279688258]

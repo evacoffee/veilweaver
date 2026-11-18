@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://jk1d5w0q6rw4" path="res://assets/images/furniture/goods_shelf_magic.png" id="19_cm0pc"]
 [ext_resource type="Texture2D" uid="uid://cwqan4w07mlbs" path="res://assets/images/furniture/goods_shelf_potions.png" id="20_pyadx"]
 [ext_resource type="Texture2D" uid="uid://dn4xwkt1e7wo7" path="res://assets/images/furniture/nightstand_oak_lamp_on.png" id="21_spgee"]
+[ext_resource type="Script" uid="uid://b77v1k6g4xk2e" path="res://scripts/forestentrance.gd" id="23_kbuqd"]
+[ext_resource type="PackedScene" uid="uid://d1xftkymgtx1p" path="res://scenes/forest.tscn" id="24_hxukt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxukt"]
 resource_name = "nocoll"
@@ -1107,6 +1109,9 @@ sources/10 = SubResource("TileSetAtlasSource_7uo60")
 sources/11 = SubResource("TileSetAtlasSource_ias0o")
 sources/12 = SubResource("TileSetAtlasSource_wltmo")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3dlt"]
+size = Vector2(68, 478.5)
+
 [node name="village" type="Node2D" unique_id=1095889006]
 
 [node name="tilesets" type="Node2D" parent="." unique_id=274479522]
@@ -1148,5 +1153,14 @@ tile_map_data = PackedByteArray("AABOACYAAAAAAAAAAABOACcAAAAAAAEAAABPACYAAQAAAAA
 tile_set = SubResource("TileSet_f3qjg")
 
 [node name="interactables" type="Node2D" parent="." unique_id=411092926]
+
+[node name="forestentrance" type="Area2D" parent="." unique_id=1537754127]
+position = Vector2(3678, 1061)
+script = ExtResource("23_kbuqd")
+destination_scene = ExtResource("24_hxukt")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="forestentrance" unique_id=995627626]
+shape = SubResource("RectangleShape2D_v3dlt")
 
 [node name="playerspawn" type="Marker2D" parent="." unique_id=810624050]

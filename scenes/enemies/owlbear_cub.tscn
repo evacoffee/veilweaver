@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://tqalrvc5uqsy"]
+
+[ext_resource type="Texture2D" uid="uid://drstb3nhjnij7" path="res://assets/images/enemies/owlbear_cub_16x16_sheet.png" id="1_olkdt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1lu2"]
+atlas = ExtResource("1_olkdt")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s64vx"]
+atlas = ExtResource("1_olkdt")
+region = Rect2(16, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crw0q"]
+atlas = ExtResource("1_olkdt")
+region = Rect2(32, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bisxi"]
+atlas = ExtResource("1_olkdt")
+region = Rect2(48, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5bgg"]
+atlas = ExtResource("1_olkdt")
+region = Rect2(64, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iryan"]
+atlas = ExtResource("1_olkdt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eubpe"]
+atlas = ExtResource("1_olkdt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oky8x"]
+atlas = ExtResource("1_olkdt")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg3rv"]
+atlas = ExtResource("1_olkdt")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1iy0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1lu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s64vx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crw0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bisxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5bgg")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iryan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eubpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oky8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg3rv")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3qjg"]
+size = Vector2(16, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0wxd5"]
+radius = 41.003048
+
+[node name="owlbear_cub" type="CharacterBody2D" unique_id=709835175]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1115230791]
+sprite_frames = SubResource("SpriteFrames_1iy0d")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1430741443]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_f3qjg")
+
+[node name="Area2D" type="Area2D" parent="CollisionShape2D" unique_id=1674784880]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D" unique_id=367933093]
+shape = SubResource("CircleShape2D_0wxd5")
