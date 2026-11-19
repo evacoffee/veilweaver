@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="veilweaver"
-run/main_scene="uid://tg7nqwl156mb"
+run/main_scene="uid://dh0nhv7b43ea3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

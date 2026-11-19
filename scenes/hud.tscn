@@ -1,3 +1,97 @@
 [gd_scene format=3 uid="uid://co2uwe0m4c1mw"]
 
+[ext_resource type="FontFile" uid="uid://dws2fbb3c5a6k" path="res://assets/images/font/PixelifySans-Bold.otf" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://1khnuuldcqni" path="res://scripts/hud.gd" id="1_oo0fn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahhtf"]
+bg_color = Color(0.5294118, 0.14117648, 0.5294118, 0.26666668)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7254902, 0.64705884, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo0fn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysmq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fi6k"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="hud" type="CanvasLayer" unique_id=145442079]
+script = ExtResource("1_oo0fn")
+
+[node name="encounterpopup" type="Control" parent="." unique_id=320709334]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="encounterpopup" unique_id=688374602]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 448.0
+offset_top = 31.0
+offset_right = 761.0
+offset_bottom = 146.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahhtf")
+
+[node name="text" type="Label" parent="encounterpopup/Panel" unique_id=1388693002]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 16.0
+offset_right = 304.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 1, 1)
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 20
+text = "you encountered a creature!"
+
+[node name="continue" type="Button" parent="encounterpopup/Panel" unique_id=2111345543]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 60.0
+offset_right = 206.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 1, 1)
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oo0fn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5ysmq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6fi6k")
+text = "continue"

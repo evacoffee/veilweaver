@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dh0nhv7b43ea3"]
+
+[ext_resource type="Texture2D" uid="uid://exyc7lpr32ct" path="res://assets/images/tilescreen/Screenshot 2026-11-18 at 20-30-51 veil - Presentation.png" id="1_6d6rd"]
+[ext_resource type="Script" uid="uid://bpxgely3mv6dy" path="res://scripts/titlescreen.gd" id="1_t7v6v"]
+[ext_resource type="FontFile" uid="uid://i0n1pvosvr2c" path="res://assets/images/font/MagicSchoolOne.ttf" id="2_tt55a"]
+[ext_resource type="FontFile" uid="uid://dws2fbb3c5a6k" path="res://assets/images/font/PixelifySans-Bold.otf" id="3_t7v6v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1iy0d"]
+bg_color = Color(0.5294118, 0.14117648, 0.5294118, 0.26666668)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7254902, 0.64705884, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3qjg"]
+bg_color = Color(0.5294118, 0.14117648, 0.5294118, 0.26666668)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7254902, 0.64705884, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhq0s"]
+bg_color = Color(0.5294118, 0.14117648, 0.5294118, 0.26666668)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.7254902, 0.64705884, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="titlescreen" type="Control" unique_id=50578230]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7v6v")
+
+[node name="bg" type="TextureRect" parent="." unique_id=559405112]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_6d6rd")
+stretch_mode = 5
+
+[node name="title" type="Label" parent="." unique_id=1993322227]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 19.0
+offset_right = 1076.0
+offset_bottom = 461.0
+theme_override_colors/font_color = Color(0.8, 0.34117648, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_tt55a")
+theme_override_font_sizes/font_size = 300
+text = "veilweaver"
+
+[node name="play" type="Button" parent="." unique_id=267521902]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 597.0
+offset_top = 406.0
+offset_right = 704.0
+offset_bottom = 450.0
+theme_override_fonts/font = ExtResource("3_t7v6v")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1iy0d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f3qjg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vhq0s")
+text = "play"
+
+[node name="continue" type="Button" parent="." unique_id=1229779008]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 544.0
+offset_top = 495.0
+offset_right = 751.0
+offset_bottom = 539.0
+theme_override_fonts/font = ExtResource("3_t7v6v")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1iy0d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f3qjg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vhq0s")
+text = "continue"
+
+[node name="controls_settings" type="Button" parent="." unique_id=646421948]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 442.0
+offset_top = 587.0
+offset_right = 853.0
+offset_bottom = 631.0
+theme_override_fonts/font = ExtResource("3_t7v6v")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1iy0d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f3qjg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vhq0s")
+text = "controls/settings"
