@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://tqalrvc5uqsy" path="res://scenes/enemies/owlbear_cub.tscn" id="5_j3csf"]
 [ext_resource type="PackedScene" uid="uid://cqy755qxovo7c" path="res://scenes/enemies/moss_golem.tscn" id="6_dabdc"]
 [ext_resource type="PackedScene" uid="uid://np3qfjee1bk4" path="res://scenes/enemies/jackalope.tscn" id="7_cf55d"]
+[ext_resource type="AudioStream" uid="uid://cyh6wmsp4x1lp" path="res://assets/audio/forest.wav" id="10_3knxq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0afsd"]
 resource_name = "nocoll"
@@ -2448,3 +2449,7 @@ shape = SubResource("RectangleShape2D_f3qjg")
 
 [node name="playerspawn" type="Marker2D" parent="." unique_id=2051727472]
 position = Vector2(917, 570)
+
+[node name="forest_sound" type="AudioStreamPlayer" parent="." unique_id=290203372]
+stream = ExtResource("10_3knxq")
+autoplay = true

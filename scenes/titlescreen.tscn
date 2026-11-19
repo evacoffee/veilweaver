@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bpxgely3mv6dy" path="res://scripts/titlescreen.gd" id="1_t7v6v"]
 [ext_resource type="FontFile" uid="uid://i0n1pvosvr2c" path="res://assets/images/font/MagicSchoolOne.ttf" id="2_tt55a"]
 [ext_resource type="FontFile" uid="uid://dws2fbb3c5a6k" path="res://assets/images/font/PixelifySans-Bold.otf" id="3_t7v6v"]
+[ext_resource type="AudioStream" uid="uid://4rdujedyq2oo" path="res://assets/audio/titlemusic.wav" id="5_vhbaf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1iy0d"]
 bg_color = Color(0.5294118, 0.14117648, 0.5294118, 0.26666668)
@@ -113,3 +114,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1iy0d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_f3qjg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vhq0s")
 text = "controls/settings"
+
+[node name="titlemusic" type="AudioStreamPlayer" parent="." unique_id=695786501]
+stream = ExtResource("5_vhbaf")
+autoplay = true
