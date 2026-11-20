@@ -7,6 +7,10 @@ extends Node2D
 @export_range(0.0, 1.0) var encounter_chance: float = 0.08
 @export var steps_between_checks: int = 8
 
+@export_group("Mushrooms")
+@export var mushroom_scene: PackedScene
+@export var mushroom_count: int = 15
+
 @onready var ground: TileMapLayer = $forest
 
 var grass_cells: Array[Vector2i] = []
@@ -19,6 +23,7 @@ func _ready():
 	randomize()
 	player = get_tree().get_first_node_in_group("player")
 	find_grass_tiles()
+	spawn_mushrooms()
 
 func find_grass_tiles():
 	grass_cells.clear()
@@ -63,3 +68,39 @@ func start_encounter(enemy_scene: PackedScene):
 func finish_encounter():
 	encounter_active = false
 	steps_since_check = 0
+
+#-------------------
+#mushrooms
+#--------------------
+func spawn_mushrooms() -> void:
+	if mushroom_scene == null:
+		push_warning('NOTHING MUSH SCENE IS ASSIGNEDDDD')
+		return
+	
+	var rng = RandomNumberGenerator.new()
+	rng.seed = MushroomManager.forest_seed + hash("forest")
+	
+	var available_cells = grass_cells.duplicate()
+	
+	var amount = mini(mushroom_count, available_cells.size())
+	
+	for i in range(amount):
+		var index = rng.randi_range(0, available_cells.size() - 1)
+		var cell = available_cells[index]
+		available_cells.remove_at(index)
+		
+		var mushroom_id = "forest_%d_%d" % [cell.x, cell.y]
+		
+		if MushroomManager.is_collected(mushroom_id):
+			continue
+			
+		var mushroom = mushroom_scene.instantiate()
+		
+		$objects.add_child(mushroom)
+		
+		mushroom.global_position = ground.to_global(ground.map_to_local(cell))
+		mushroom.mushroom_id = mushroom_id
+		mushroom.mushroom_type = "common"
+		
+		var variant_index = rng.randi_range(0, 35)
+		mushroom.set_mushroom_variant(variant_index)

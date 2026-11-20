@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://5i2svvuu1ceg"]
+
+[ext_resource type="Script" uid="uid://dhl2ukdop72cr" path="res://scripts/collectible.gd" id="1_1pg6c"]
+[ext_resource type="AudioStream" uid="uid://ckmcl5xri28a7" path="res://assets/audio/mushroomcollect.wav" id="1_bkg8t"]
+[ext_resource type="Texture2D" uid="uid://00rj85wvcbi8" path="res://assets/images/collectables/sprites.png" id="2_61c27"]
+
+[node name="collectible" type="Area2D" unique_id=1602750098]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_1pg6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=437008535]
+texture = ExtResource("2_61c27")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1522307647]
+
+[node name="collectsound" type="AudioStreamPlayer2D" parent="." unique_id=1776306598]
+stream = ExtResource("1_bkg8t")

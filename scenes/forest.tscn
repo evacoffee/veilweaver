@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://tqalrvc5uqsy" path="res://scenes/enemies/owlbear_cub.tscn" id="5_j3csf"]
 [ext_resource type="PackedScene" uid="uid://cqy755qxovo7c" path="res://scenes/enemies/moss_golem.tscn" id="6_dabdc"]
 [ext_resource type="PackedScene" uid="uid://np3qfjee1bk4" path="res://scenes/enemies/jackalope.tscn" id="7_cf55d"]
+[ext_resource type="PackedScene" uid="uid://5i2svvuu1ceg" path="res://scenes/collectible.tscn" id="8_ercsu"]
 [ext_resource type="AudioStream" uid="uid://cyh6wmsp4x1lp" path="res://assets/audio/forest.wav" id="10_3knxq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0afsd"]
@@ -2404,6 +2405,7 @@ size = Vector2(23, 53.000008)
 y_sort_enabled = true
 script = ExtResource("1_bgcxa")
 enemy_scenes = Array[PackedScene]([ExtResource("2_0nboi"), ExtResource("3_3knxq"), ExtResource("4_ercsu"), ExtResource("5_j3csf"), ExtResource("6_dabdc"), ExtResource("7_cf55d")])
+mushroom_scene = ExtResource("8_ercsu")
 
 [node name="forest" type="TileMapLayer" parent="." unique_id=259023282]
 scale = Vector2(2, 2)
